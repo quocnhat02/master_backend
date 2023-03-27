@@ -1,8 +1,8 @@
 import './App.css';
-import Toggle from './components/state/Toggle';
+import Game from './components/tictactoe/Game';
 
 function App() {
-  return <Toggle />;
+  return <Game />;
 }
 
 export default App;
