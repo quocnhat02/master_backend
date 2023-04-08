@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledCard = styled.div`
   position: relative;
@@ -62,7 +62,7 @@ const CardTitle = styled.h3`
   color: black;
 `;
 const CardAmount = styled.span`
-  font-size: 18px;
+  font-size: ${(props) => props.fontSize || '18px'};
   font-weight: bold;
   background: linear-gradient(
     90deg,
@@ -70,12 +70,32 @@ const CardAmount = styled.span`
     rgba(154, 253, 29, 1) 85%,
     rgba(69, 252, 198, 1) 100%
   );
+  ${(props) =>
+    props.secondary &&
+    css`
+      background: linear-gradient(
+        90deg,
+        rgba(86, 113, 244, 1) 0%,
+        rgba(45, 238, 200, 1) 18%,
+        rgba(187, 75, 227, 1) 85%
+      );
+    `};
+  ${(props) =>
+    !props.secondary &&
+    css`
+      background: linear-gradient(
+        90deg,
+        rgba(244, 86, 232, 1) 0%,
+        rgba(154, 253, 29, 1) 85%,
+        rgba(69, 252, 198, 1) 100%
+      );
+    `};
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 `;
 
-const Card = () => {
+const Card = (props) => {
   return (
     <StyledCard>
       <CardImage>
@@ -94,7 +114,9 @@ const Card = () => {
         </CardTop>
         <CardFooter>
           <CardTitle>ReactJS</CardTitle>
-          <CardAmount>12,000 VND</CardAmount>
+          <CardAmount secondary={props.secondary} fontSize='22px'>
+            12,000 VND
+          </CardAmount>
         </CardFooter>
       </CardContent>
     </StyledCard>
