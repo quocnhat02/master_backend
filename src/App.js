@@ -1,8 +1,8 @@
 import './App.css';
-import Game from './components/tictactoe/Game';
+import Count from './components/number/Count';
 
 function App() {
-  return <Game />;
+  return <Count />;
 }
 
 export default App;
