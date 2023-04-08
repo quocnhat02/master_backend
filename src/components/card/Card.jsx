@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
   position: relative;
-  width: 400px;
 `;
 const CardImage = styled.div`
   height: 400px;
