@@ -1,8 +1,13 @@
 import './App.css';
-import Count from './components/number/Count';
+import Button from './components/button/Button';
 
 function App() {
-  return <Count />;
+  return (
+    <div>
+      <Button>Primary</Button>
+      <Button className='button--secondary'>Secondary</Button>
+    </div>
+  );
 }
 
 export default App;
