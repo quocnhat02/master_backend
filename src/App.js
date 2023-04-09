@@ -1,10 +1,12 @@
 import './App.css';
+import { GlobalStyles } from './GlobalStyles';
 import Card from './components/card/Card';
 import CardList from './components/card/CardList';
 
 function App() {
   return (
     <div>
+      <GlobalStyles></GlobalStyles>
       <CardList>
         <Card secondary={true}></Card>
         <Card></Card>
