@@ -58,7 +58,8 @@ const StyledCard = styled.div`
   .card-title {
     font-size: 18px;
     font-weight: 500;
-    color: ${(props) => props.theme.colors.blue};
+    ${'' /* color: ${(props) => props.theme.colors.blue}; */}
+    color: green;
   }
   .card-amount {
     font-size: ${(props) => props.fontSize || '18px'};
