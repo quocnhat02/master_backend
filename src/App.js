@@ -23,10 +23,10 @@ function App() {
       {/* <CardList>
         <CardTailwind primary={true}></CardTailwind>
       </CardList> */}
-      {/* <Photos></Photos> */}
+      <Photos></Photos>
       {/* <Count></Count> */}
       {/* <Timer></Timer> */}
-      <Header></Header>
+      {/* <Header></Header> */}
     </div>
   );
 }
