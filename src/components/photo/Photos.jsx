@@ -2,26 +2,27 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const getRandomPhotos = (page) => {
-  return axios
-    .get(`http://jsonplaceholder.typicode.com/photos?_start=${page}&_limit=8`)
-    .then((res) => {
-      console.log(res);
-      return res.data;
-    })
-    .catch((error) => console.log(error));
+const getRandomPhotos = async (page) => {
+  try {
+    const res = await axios.get(
+      `http://jsonplaceholder.typicode.com/photos?_start=${page}&_limit=8`
+    );
+    console.log(res);
+    return res.data;
+  } catch (error) {
+    return console.log(error);
+  }
 };
 
 const Photos = () => {
   const [randomPhotos, setRandomPhotos] = useState([]);
   const [nextPage, setNextPage] = useState(0);
 
-  const handleLoadMorePhotos = () => {
-    getRandomPhotos(nextPage).then((images) => {
-      const newPhotos = [...randomPhotos, ...images];
-      setRandomPhotos(newPhotos);
-      setNextPage(nextPage + 1);
-    });
+  const handleLoadMorePhotos = async () => {
+    const images = await getRandomPhotos(nextPage);
+    const newPhotos = [...randomPhotos, ...images];
+    setRandomPhotos(newPhotos);
+    setNextPage(nextPage + 1);
   };
 
   useEffect(() => {
