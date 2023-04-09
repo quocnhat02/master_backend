@@ -15,6 +15,11 @@ import Photos from './components/photo/Photos';
 function App() {
   return (
     <div>
+      {/* <ThemeProvider theme={theme}></ThemeProvider> */}
+      {/* <GlobalStyles></GlobalStyles> */}
+      {/* <CardList>
+        <CardTailwind primary={true}></CardTailwind>
+      </CardList> */}
       <Photos></Photos>
     </div>
   );
