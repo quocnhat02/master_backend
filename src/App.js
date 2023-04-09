@@ -1,4 +1,5 @@
-import './App.css';
+import './App.scss';
+import './index.scss';
 import { GlobalStyles } from './GlobalStyles';
 import Card from './components/card/Card';
 import Card2 from './components/card/Card2';
