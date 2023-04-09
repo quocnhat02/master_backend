@@ -1,4 +1,5 @@
 import './App.scss';
+import Header from './components/Header';
 import Timer from './components/Timer';
 import Count from './components/number/Count';
 import Photos from './components/photo/Photos';
@@ -24,7 +25,8 @@ function App() {
       </CardList> */}
       {/* <Photos></Photos> */}
       {/* <Count></Count> */}
-      <Timer></Timer>
+      {/* <Timer></Timer> */}
+      <Header></Header>
     </div>
   );
 }
