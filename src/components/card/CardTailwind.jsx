@@ -24,7 +24,9 @@ const CardTailwind = () => {
         </div>
         <div className='flex items-center justify-between'>
           <div className='text-lg font-medium'>ReactJS</div>
-          <span className='text-lg font-bold'>12,000 VND</span>
+          <span className='text-lg font-bold text-transparent bg-clip-text bg-primary-gradient'>
+            12,000 VND
+          </span>
         </div>
       </div>
     </div>
