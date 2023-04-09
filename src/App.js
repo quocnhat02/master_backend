@@ -1,6 +1,7 @@
 import './App.scss';
 import Header from './components/Header';
 import Timer from './components/Timer';
+import HackerNews from './components/news/HackerNews';
 import Count from './components/number/Count';
 import Photos from './components/photo/Photos';
 // import { GlobalStyles } from './GlobalStyles';
@@ -23,10 +24,11 @@ function App() {
       {/* <CardList>
         <CardTailwind primary={true}></CardTailwind>
       </CardList> */}
-      <Photos></Photos>
+      {/* <Photos></Photos> */}
       {/* <Count></Count> */}
       {/* <Timer></Timer> */}
       {/* <Header></Header> */}
+      <HackerNews></HackerNews>
     </div>
   );
 }
