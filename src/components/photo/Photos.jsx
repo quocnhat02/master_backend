@@ -18,8 +18,8 @@ const Photos = () => {
 
   const handleLoadMorePhotos = () => {
     getRandomPhotos(nextPage).then((images) => {
-      console.log(images);
-      setRandomPhotos(images);
+      const newPhotos = [...randomPhotos, ...images];
+      setRandomPhotos(newPhotos);
       setNextPage(nextPage + 1);
     });
   };
@@ -34,7 +34,7 @@ const Photos = () => {
         {randomPhotos.length > 0 &&
           randomPhotos.map((item, index) => (
             <div
-              key={item.id}
+              key={`${item.id}${index}`}
               className='p-3 bg-white shadow-md rounded-lg h-[200px]'
             >
               <img
