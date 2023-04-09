@@ -1,6 +1,7 @@
 import './App.css';
 import { GlobalStyles } from './GlobalStyles';
 import Card from './components/card/Card';
+import Card2 from './components/card/Card2';
 import CardList from './components/card/CardList';
 
 function App() {
@@ -8,12 +9,9 @@ function App() {
     <div>
       <GlobalStyles></GlobalStyles>
       <CardList>
-        <Card secondary={true}></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <Card2 secondary={true}></Card2>
+        <Card2></Card2>
+        <Card2></Card2>
       </CardList>
     </div>
   );
