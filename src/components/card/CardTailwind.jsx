@@ -1,7 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 
-const CardTailwind = () => {
+const CardTailwind = (props) => {
+  const amountClasses = `text-lg font-bold text-transparent bg-clip-text ${
+    props.primary ? 'bg-primary-gradient' : 'bg-secondary-gradient'
+  } `;
+
   return (
     <div className='relative'>
       <div className='w-full rounded-lg h-[400px]'>
@@ -24,9 +28,7 @@ const CardTailwind = () => {
         </div>
         <div className='flex items-center justify-between'>
           <div className='text-lg font-medium'>ReactJS</div>
-          <span className='text-lg font-bold text-transparent bg-clip-text bg-primary-gradient'>
-            12,000 VND
-          </span>
+          <span className={amountClasses}>12,000 VND</span>
         </div>
       </div>
     </div>

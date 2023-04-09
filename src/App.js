@@ -17,7 +17,7 @@ function App() {
       {/* <ThemeProvider theme={theme}></ThemeProvider> */}
       {/* <GlobalStyles></GlobalStyles> */}
       <CardList>
-        <CardTailwind></CardTailwind>
+        <CardTailwind primary={true}></CardTailwind>
       </CardList>
     </div>
   );
