@@ -1,4 +1,6 @@
 import './App.scss';
+import Timer from './components/Timer';
+import Count from './components/number/Count';
 import Photos from './components/photo/Photos';
 // import { GlobalStyles } from './GlobalStyles';
 // import Card from './components/card/Card';
@@ -20,7 +22,9 @@ function App() {
       {/* <CardList>
         <CardTailwind primary={true}></CardTailwind>
       </CardList> */}
-      <Photos></Photos>
+      {/* <Photos></Photos> */}
+      {/* <Count></Count> */}
+      <Timer></Timer>
     </div>
   );
 }

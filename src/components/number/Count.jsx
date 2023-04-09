@@ -1,4 +1,6 @@
-import React, { useReducer, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import React, { useEffect, useReducer, useState } from 'react';
 
 const initialState = {
   count: 0,
@@ -38,11 +40,22 @@ const Count = () => {
     });
   };
 
+  useEffect(() => {
+    console.log('Hello');
+  }, [initialState.count]);
+
   return (
-    <div className='count'>
-      <div>Count: {state.count}</div>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
+    <div className='p-5 flex gap-x-4'>
+      <div className='text-2xl'>Count: {state.count}</div>
+      <button
+        className='inline-block p-3 bg-green-300'
+        onClick={handleIncrement}
+      >
+        Increment
+      </button>
+      <button className='inline-block p-3 bg-red-300' onClick={handleDecrement}>
+        Decrement
+      </button>
     </div>
   );
 };
