@@ -39,6 +39,16 @@ class AccessService {
         // create privateKey, publicKey
         const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
           modulusLength: 4096,
+          publicKeyEncoding: {
+            // Public key CryptoGraphy Standards
+            type: 'pkcs1',
+            format: 'pem',
+          },
+          privateKeyEncoding: {
+            // Public key CryptoGraphy Standards
+            type: 'pkcs1',
+            format: 'pem',
+          },
         });
 
         console.log({ privateKey, publicKey }); // save collection KeyStore
@@ -55,10 +65,14 @@ class AccessService {
           };
         }
 
+        const publicKeyObject = crypto.createPublicKey(publicKey);
+
+        console.log(`publicKeyObject `, publicKeyObject);
+
         // created token pair
         const tokens = await createTokenPair(
           { userId: newShop._id, email },
-          publicKey,
+          publicKeyObject,
           privateKey
         );
 
