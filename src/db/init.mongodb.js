@@ -27,8 +27,7 @@ class Database {
       })
       .then((_) => {
         console.log(
-          `Connected Mongodb Success PRO with numbers connect:`,
-          countConnect()
+          `Connected Mongodb Success: ${connectString} with numbers of connections ${countConnect()}`
         );
       })
       .catch((err) => console.log(`Error Connect Mongodb`));

@@ -5,7 +5,7 @@ const compression = require('compression');
 
 require('dotenv').config();
 
-const { checkOverload } = require('./helpers/check.connect');
+// const { checkOverload } = require('./helpers/check.connect');
 
 const app = express();
 
