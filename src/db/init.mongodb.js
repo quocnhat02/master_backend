@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const { countConnect } = require('../helpers/check.connect');
 
 const connectString = `mongodb://127.0.0.1:27017/shopDev`;
 
@@ -18,7 +19,12 @@ class Database {
 
     mongoose
       .connect(connectString)
-      .then((_) => console.log(`Connected Mongodb Success PRO`))
+      .then((_) => {
+        console.log(
+          `Connected Mongodb Success PRO with numbers connect:`,
+          countConnect()
+        );
+      })
       .catch((err) => console.log(`Error Connect Mongodb`));
   }
 
