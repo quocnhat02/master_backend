@@ -3,6 +3,8 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
 
+require('dotenv').config();
+
 const { checkOverload } = require('./helpers/check.connect');
 
 const app = express();
@@ -14,7 +16,7 @@ app.use(compression());
 
 // init db
 require('./db/init.mongodb');
-checkOverload();
+// checkOverload();
 
 // init routes
 app.get('/', (req, res, next) => {
