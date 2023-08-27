@@ -41,6 +41,17 @@ class AccessService {
 
         console.log({ privateKey, publicKey }); // save collection KeyStore
       }
+
+      return {
+        code: 201,
+        metadata: {
+          newShop,
+          tokens: {
+            accessToken: privateKey,
+            refreshToken: publicKey,
+          },
+        },
+      };
     } catch (error) {
       return {
         code: 'xxx',
