@@ -1,17 +1,23 @@
 const express = require('express');
 const morgan = require('morgan');
+const helmet = require('helmet');
+const compression = require('compression');
 
 const app = express();
 
 // init middlewares
 app.use(morgan('dev'));
+app.use(helmet());
+app.use(compression());
 
 // init db
 
 // init routes
 app.get('/', (req, res, next) => {
-  res.status(500).send({
-    message: 'Hello',
+  const strCompress = 'Hello World';
+  res.status(200).send({
+    message: 'Hello Nhat',
+    metadata: strCompress.repeat(10000),
   });
 });
 
