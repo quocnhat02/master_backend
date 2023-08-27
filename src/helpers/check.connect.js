@@ -31,7 +31,12 @@ const checkOverload = () => {
   }, _SECOND); // Monitor every 5 seconds
 };
 
+const disconnectDb = async () => {
+  await mongoose.disconnect();
+};
+
 module.exports = {
   countConnect,
   checkOverload,
+  disconnectDb,
 };
