@@ -1,7 +1,7 @@
 @url_dev=http://127.0.0.1:5001/v1/api
 
 ### signup
-POST {{url_dev}}/shop/signupa
+POST {{url_dev}}/shop/signup
 Content-Type: application/json
 x-api-key: d59bd6114adabbb3b2d548e7a517ab490518b23d72d444d9a56cdd9314e6a2ec44735deeb4908d0075f36394ea066718e19cc0379f485ae63fbe323733db54b1
 
