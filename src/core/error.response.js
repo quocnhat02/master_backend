@@ -27,7 +27,17 @@ class BadRequestError extends ErrorResponse {
   }
 }
 
+class AuthFailureError extends ErrorResponse {
+  constructor(
+    message = ReasonPhrases.NON_AUTHORITATIVE_INFORMATION,
+    statusCode = StatusCodes.NON_AUTHORITATIVE_INFORMATION
+  ) {
+    super(message, statusCode);
+  }
+}
+
 module.exports = {
   ConflictRequestError,
   BadRequestError,
+  AuthFailureError,
 };
