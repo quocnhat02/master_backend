@@ -12,7 +12,6 @@ const {
   ForbiddenError,
 } = require('../core/error.response');
 const { findByEmail } = require('./shop.service');
-const { log } = require('console');
 
 const RolesShop = {
   SHOP: 'SHOP',
@@ -22,6 +21,47 @@ const RolesShop = {
 };
 
 class AccessService {
+  static handlerRefreshTokenV2 = async ({ keyStore, user, refreshToken }) => {
+    const { userId, email } = user;
+
+    if (keyStore.refreshTokenUsed.includes(refreshToken)) {
+      await KeyTokenService.deleteKeyById(userId);
+
+      throw new ForbiddenError('Something wrong happen !! Please re-login');
+    }
+
+    if (keyStore.refreshToken !== refreshToken) {
+      throw new ForbiddenError('Shop not registered');
+    }
+
+    const foundShop = await findByEmail({ email });
+    if (!foundShop) {
+      throw new AuthFailureError('Shop not registered');
+    }
+
+    // create 1 cap moi
+    const tokens = await createTokenPair(
+      { userId, email },
+      keyStore.publicKey,
+      keyStore.privateKey
+    );
+
+    // update token
+    await keyStore.update({
+      $set: {
+        refreshToken: tokens.refreshToken,
+      },
+      $addToSet: {
+        refreshTokenUsed: refreshToken, // da duoc su dung de lay token moi roi
+      },
+    });
+
+    return {
+      user,
+      tokens,
+    };
+  };
+
   /**
    * check this token used
    */
