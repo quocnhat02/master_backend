@@ -1,11 +1,12 @@
 @url_dev=http://127.0.0.1:5000/v1/api
 
 ### signUp
-POST {{url_dev}}/shop/signup
+POST {{url_dev}}/shop/signupa
 Content-Type: application/json
+x-api-key: 56355919c7bc1cc1d17de9b057b16077d2250f2e4b1fd62a57191e8fb578ccfaedf0717208af4996a6e6386737152b84108a1d09bcc1ac390a9adaa312662b95
 
 {
     "name": "Shop Web",
-    "email": "nguyenquocnhat@gmail.com",
+    "email": "nguyenquocnhat1@gmail.com",
     "password": "nhat123"
 }
