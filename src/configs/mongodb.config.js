@@ -1,10 +1,8 @@
-'use strict';
-
-// level 0
+// lv0
 
 // const config = {
 //   app: {
-//     port: 3000,
+//     port: 5000,
 //   },
 //   db: {
 //     host: '127.0.0.1',
@@ -13,8 +11,7 @@
 //   },
 // };
 
-// level 01
-
+// lv01
 const dev = {
   app: {
     port: process.env.DEV_APP_PORT || 5001,
