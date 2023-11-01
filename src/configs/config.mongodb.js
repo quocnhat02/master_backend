@@ -1,18 +1,3 @@
-// level 0
-
-// const config = {
-//   app: {
-//     port: 5000,
-//   },
-//   db: {
-//     host: '127.0.0.1',
-//     port: 27017,
-//     name: 'shopDEV',
-//   },
-// };
-
-// level 1
-
 const dev = {
   app: {
     port: process.env.DEV_APP_PORT || 5000,
