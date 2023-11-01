@@ -3,6 +3,7 @@
 ### sign-up
 POST {{url_dev}}/shop/sign-up
 Content-Type: application/json
+x-api-key: 76968136aff7cb13ec27946f1de3ada7d840b099b17e4859087ed14be65da370116c9522878f183eabd0bfcf453c6ae4f028e62a830949dbad828c67e5789810
 
 {
     "name": "Shop Nhat",
