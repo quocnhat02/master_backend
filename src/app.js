@@ -10,16 +10,18 @@ const app = express();
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(compression());
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 // Initialize database
 require('./databases/init.mongodb');
 
 // Initialize routes
-app.get('/', (req, res, next) => {
-  res.status(200).json({
-    message: 'Hello',
-  });
-});
+app.use('/', require('./routes'));
 
 // Handle errors
 
