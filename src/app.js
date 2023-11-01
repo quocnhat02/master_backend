@@ -6,6 +6,9 @@ const compression = require('compression');
 const { default: helmet } = require('helmet');
 const morgan = require('morgan');
 
+// env
+require('dotenv').config();
+
 const app = express();
 
 // init middlewares
